@@ -35,6 +35,3 @@ jobs:
       with:
         name: pytest-results
         path: report.html
-    - name: Upload coverage
-      shell: pwsh
-      run: coverage report -m
