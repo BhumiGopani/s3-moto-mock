@@ -26,3 +26,5 @@ https://www.youtube.com/watch?v=jdey8FvEBM0
 
 # To run pre-commit for all the files
 `pre-commit run --all-files`
+
+Please feel free to add changes.
