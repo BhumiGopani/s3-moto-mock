@@ -1,0 +1,5 @@
+pytest
+boto
+moto
+pytest-html
+pre-commit
