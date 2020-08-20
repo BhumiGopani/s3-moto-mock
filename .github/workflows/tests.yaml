@@ -18,9 +18,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        python3 -m pip3 install --upgrade pip3
+        python3 -m pip install --upgrade pip
         pip3 install flake8 pytest
-        if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
+        pip3 install -r requirements.txt
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -30,11 +30,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --html=report.html
-      - uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: pytest-results
-          path: report.html
-    - name: Upload coverage
-      shell: pwsh
-      run: coverage report -m
+    - uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: pytest-results
+        path: report.html

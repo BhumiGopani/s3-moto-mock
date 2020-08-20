@@ -8,7 +8,7 @@ class S3Handler:
         self.s3_client = self.s3_session.client("s3")
         self.bucket = "my_bucket"
         self.file_name = "testfile.pdf"
-        self.file_path = "/Users/bhumigopani/Documents/Personal/s3-moto-mock/file_to_upload/"
+        self.file_path = "file_to_upload/"
 
     def upload_s3_files(self):
 
