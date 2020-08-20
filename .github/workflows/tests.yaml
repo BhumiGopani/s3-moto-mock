@@ -30,11 +30,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --html=report.html
-      - uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: pytest-results
-          path: report.html
+    - uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: pytest-results
+        path: report.html
     - name: Upload coverage
       shell: pwsh
       run: coverage report -m
