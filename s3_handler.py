@@ -8,7 +8,9 @@ class S3Handler:
         self.s3_client = self.s3_session.client("s3")
         self.bucket = "my_bucket"
         self.file_name = "testfile.pdf"
-        self.file_path = "file_to_upload/"
+        self.file_path = "/Users/bhumigopani/Documents/Personal/s3-moto-mock/file_to_upload/"
+        self.downloaded_file_path = "/Users/bhumigopani/Documents/Personal/s3-moto-mock/file_downloaded/"
+        self.downloaded_file_name = "testfile.pdf"
 
     def upload_s3_files(self):
 
@@ -18,4 +20,14 @@ class S3Handler:
             path_to_file,
             self.bucket,
             self.file_name
+        )
+
+    def download_s3_files(self):
+
+        d_path_to_file = os.path.join(self.downloaded_file_path, self.downloaded_file_name)
+
+        self.s3_client.download_file(
+            self.bucket,
+            self.downloaded_file_name,
+            d_path_to_file
         )
