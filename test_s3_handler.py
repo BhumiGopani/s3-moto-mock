@@ -8,3 +8,4 @@ def test_upload_s3_files():
     s3_client.create_bucket(Bucket="my_bucket")
     s3_handler = S3Handler()
     s3_handler.upload_s3_files()
+    s3_handler.download_s3_files()
