@@ -2,6 +2,7 @@ import boto3
 from moto import mock_s3
 from s3_handler import S3Handler
 
+
 @mock_s3
 def test_upload_s3_files():
     s3_client = boto3.client("s3")
